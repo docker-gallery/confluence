@@ -1,0 +1,17 @@
+version: '3.3'
+
+services:
+  confluence:
+    build:
+      context: ./confluence
+      dockerfile: ./dockerfile
+    ports:
+       - "8081:8090"
+    volumes:
+      - ./data/:/var/atlassian/application-data/confluence/
+    networks:
+      - front
+
+networks:
+  front:
+    external: true
