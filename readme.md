@@ -1,9 +1,9 @@
 # Supported tags and respective ```Dockerfile``` links
 
-[![Dockerfile 6.9.0](https://img.shields.io/badge/Dockerfile-v6.9.0-blue.svg?style=flat)](https://github.com/docker-gallery/confluence/blob/v.6.9.0/Dockerfile) [![Docker Hub](https://img.shields.io/badge/DockerHub-v6.9.0-blue.svg?style=flat)](https://hub.docker.com/r/luizcarlosfaria/confluence/)
+[![Dockerfile 6.9.0](https://img.shields.io/badge/Dockerfile-v6.9.0-blue.svg?style=flat)](https://github.com/docker-gallery/confluence/blob/v6.9.0/Dockerfile) [![Docker Hub](https://img.shields.io/badge/DockerHub-v6.9.0-blue.svg?style=flat)](https://hub.docker.com/r/luizcarlosfaria/confluence/)
 
 
-[![Dockerfile 6.4.3](https://img.shields.io/badge/Dockerfile-v6.4.3-lightgray.svg?style=flat)](https://github.com/docker-gallery/confluence/blob/v.6.4.3/Dockerfile)
+[![Dockerfile 6.4.3](https://img.shields.io/badge/Dockerfile-v6.4.3-lightgray.svg?style=flat)](https://github.com/docker-gallery/confluence/blob/v6.4.3/Dockerfile)
 
 
 ## How to use this image
