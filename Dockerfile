@@ -1,12 +1,13 @@
 FROM ubuntu as downloader
 RUN apt-get update && apt-get install wget curl -y
-ENV CONFLUENCE_VERSION  		6.4.3
-ENV MYSQL_CONNECTOR_VERSION		5.1.44
+ENV CONFLUENCE_VERSION  		6.9.0
+ENV MYSQL_CONNECTOR_VERSION		5.1.46
 WORKDIR /home
-RUN wget -O mysql-connector-java-${MYSQL_CONNECTOR_VERSION}.tar.gz   https://cdn.mysql.com//Downloads/Connector-J/mysql-connector-java-${MYSQL_CONNECTOR_VERSION}.tar.gz
+
+ADD ./mysql-connector-java-${MYSQL_CONNECTOR_VERSION}.tar.gz ./
+
 RUN wget -O atlassian-confluence-${CONFLUENCE_VERSION}.tar.gz        http://www.atlassian.com/software/confluence/downloads/binary/atlassian-confluence-${CONFLUENCE_VERSION}.tar.gz
-RUN tar -xzf mysql-connector-java-${MYSQL_CONNECTOR_VERSION}.tar.gz -C ./ \
-&& mv ./mysql-connector-java-${MYSQL_CONNECTOR_VERSION} ./mysql-connector-java \
+RUN mv ./mysql-connector-java-${MYSQL_CONNECTOR_VERSION} ./mysql-connector-java \
 && tar -xzf atlassian-confluence-${CONFLUENCE_VERSION}.tar.gz -C ./ \
 && mv ./atlassian-confluence-${CONFLUENCE_VERSION} ./atlassian-confluence \
 && rm ./*.tar.gz
@@ -14,8 +15,8 @@ RUN tar -xzf mysql-connector-java-${MYSQL_CONNECTOR_VERSION}.tar.gz -C ./ \
 
 FROM openjdk:8
 
-ENV CONFLUENCE_VERSION  		6.4.3
-ENV MYSQL_CONNECTOR_VERSION		5.1.44
+ENV CONFLUENCE_VERSION  		6.9.0
+ENV MYSQL_CONNECTOR_VERSION		5.1.46
 ENV ATLASSIAN_HOME  			/opt/atlassian
 ENV CONFLUENCE_INSTALL    		/opt/atlassian/confluence
 ENV CONFLUENCE_HOME     	    /var/atlassian/application-data/confluence
