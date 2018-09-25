@@ -1,6 +1,6 @@
 FROM ubuntu as downloader
 RUN apt-get update && apt-get install wget curl -y
-ENV CONFLUENCE_VERSION  		6.9.0
+ENV CONFLUENCE_VERSION  		6.11.2
 ENV MYSQL_CONNECTOR_VERSION		5.1.46
 WORKDIR /home
 
@@ -15,7 +15,7 @@ RUN mv ./mysql-connector-java-${MYSQL_CONNECTOR_VERSION} ./mysql-connector-java 
 
 FROM openjdk:8
 
-ENV CONFLUENCE_VERSION  		6.9.0
+ENV CONFLUENCE_VERSION  		6.11.2
 ENV MYSQL_CONNECTOR_VERSION		5.1.46
 ENV ATLASSIAN_HOME  			/opt/atlassian
 ENV CONFLUENCE_INSTALL    		/opt/atlassian/confluence
